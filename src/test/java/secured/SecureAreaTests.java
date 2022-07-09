@@ -1,11 +1,13 @@
-package credentials;
+package secured;
 
 import base.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pageobjects.credentials.LoginPage;
+import pageobjects.securedArea.SecuredAreaPage;
 
-public class LoginTests extends BaseTest {
+public class SecureAreaTests extends BaseTest {
+    private SecuredAreaPage securedAreaPage;
     private LoginPage loginPage;
 
     @BeforeMethod(alwaysRun = true)
@@ -19,13 +21,14 @@ public class LoginTests extends BaseTest {
     }
 
     @Test(groups = {regression})
-    public void lockedCredentialsTest() {
+    public void verifyUsernameVisibleTest() {
+
         loginPage.fillLogin("tomsmith","SuperSecretPassword!");
         loginPage.verifyRedBoxIsDisplayed();
     }
 
     @Override
     protected void initPages() {
-        loginPage = new LoginPage(driver);
+        securedAreaPage = new SecuredAreaPage(driver);
     }
 }

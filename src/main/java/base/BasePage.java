@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,8 +18,9 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected SoftAssert softAssert;
+    protected Actions actions;
     protected int timeout;
-    private final String mainUrl = "https://www.saucedemo.com/";
+    private final String mainUrl = "http://the-internet.herokuapp.com/";
 
     public BasePage(WebDriver driver) {
         this(driver, 5);

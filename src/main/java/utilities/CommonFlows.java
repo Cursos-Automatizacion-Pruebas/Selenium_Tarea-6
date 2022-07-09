@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import pageobjects.credentials.LoginPage;
+import pageobjects.examples.ExamplePage;
 
 public class CommonFlows {
     private final Logs log = new Logs();
@@ -12,9 +13,24 @@ public class CommonFlows {
     }
 
     public void goToIndex() {
+        var examplePage = new ExamplePage(driver);
+        examplePage.goToIndex();
+        examplePage.waitPageToLoad();
+    }
+
+    public void goToLogin() {
+        var examplePage = new ExamplePage(driver);
+        var loginPage = new LoginPage(driver);
+;
+        examplePage.clickOnFormAuthentication();
+        loginPage.waitPageToLoad();
+    }
+
+    public void goToCheckBoxes(){
+        var examplePage = new ExamplePage(driver);
         var loginPage = new LoginPage(driver);
 
-        loginPage.goToIndex();
+        examplePage.clickOnFormAuthentication();
         loginPage.waitPageToLoad();
     }
 

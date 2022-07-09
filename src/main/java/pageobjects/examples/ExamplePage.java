@@ -1,53 +1,38 @@
-package pageobjects.credentials;
+package pageobjects.examples;
 
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class LoginPage extends BasePage {
-    private final By usernameInput = By.id("username");
-    private final By passwordInput = By.id("password");
-    private final By loginButton = By.className("fa-sign-in");
-    private final By cuadradoRojo = By.className("error");
+public class ExamplePage extends BasePage {
+    private final By formAuthenticationlink = By.linkText("Form Authentication");
+    private final By checkboxeslink = By.linkText("Checkboxes");
 
-    public LoginPage(WebDriver driver) {
+    public ExamplePage(WebDriver driver) {
         super(driver);
+    }
+
+    @Override
+    public void waitPageToLoad() {
+        waitPage(formAuthenticationlink, this.getClass().getSimpleName());
     }
 
     @Override
     public void verifyPage() {
         log.info("Verifying login page UI elements");
 
-        log.info("Verifying username input is displayed");
-        softAssert.assertTrue(verifyIsDisplayed(usernameInput), "username input is not displayed");
-
-        log.info("Verifying password input is displayed");
-        softAssert.assertTrue(verifyIsDisplayed(passwordInput), "username input is not displayed");
-
-        log.info("Verifying login button is displayed");
-        softAssert.assertTrue(verifyIsDisplayed(loginButton), "username input is not displayed");
-        softAssert.assertAll();
+        log.info("Verifying form Authentication link is displayed");
+        softAssert.assertTrue(verifyIsDisplayed(formAuthenticationlink), "username input is not displayed");
     }
 
-    @Override
-    public void waitPageToLoad() {
-        waitPage(usernameInput, this.getClass().getSimpleName());
+    public void clickOnFormAuthentication() {
+        log.info("Clicking on Form Authentication link");
+        click(formAuthenticationlink);
     }
 
-    public void fillLogin(String username, String password) {
-        log.info("Filling username");
-        type(usernameInput, username);
-
-        log.info("Filling password");
-        type(passwordInput, password);
-
-        log.info("Clicking on login button");
-        click(loginButton);
-    }
-
-    public void verifyLockedMessageIsDisplayed() {
-        log.info("Verifying locked red box is displayed");
-        Assert.assertTrue(verifyIsDisplayed(cuadradoRojo));
+    public void clickOnCheckboxeslink() {
+        log.info("Clicking on Checkboxes link");
+        click(checkboxeslink);
     }
 }
