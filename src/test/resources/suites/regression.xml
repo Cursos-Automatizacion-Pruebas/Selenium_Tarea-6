@@ -22,5 +22,19 @@
             <package name="secured"/>
         </packages>
     </test>
-
+    <test name="checks">
+        <packages>
+            <package name="checks"/>
+        </packages>
+    </test>
+    <test name="AddRemoveElements">
+        <packages>
+            <package name="AddRemoveElements"/>
+        </packages>
+    </test>
+    <test name="statuscode">
+        <packages>
+            <package name="statuscode"/>
+        </packages>
+    </test>
 </suite>

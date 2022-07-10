@@ -3,11 +3,12 @@ package pageobjects.examples;
 import base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class ExamplePage extends BasePage {
     private final By formAuthenticationlink = By.linkText("Form Authentication");
-    private final By checkboxeslink = By.linkText("Checkboxes");
+    private final By checkBoxeslink = By.linkText("Checkboxes");
+    private final By addRemoveElementslink = By.linkText("Add/Remove Elements");
+    private final By statusCodelink = By.linkText("Status Codes");
 
     public ExamplePage(WebDriver driver) {
         super(driver);
@@ -33,6 +34,16 @@ public class ExamplePage extends BasePage {
 
     public void clickOnCheckboxeslink() {
         log.info("Clicking on Checkboxes link");
-        click(checkboxeslink);
+        click(checkBoxeslink);
+    }
+
+    public void clickOnAddRemoveElementslink() {
+        log.info("Clicking on Add/Remove Elements link");
+        click(addRemoveElementslink);
+    }
+
+    public void clickOnStatusCodelink() {
+        log.info("Clicking on Status Code link");
+        click(statusCodelink);
     }
 }
