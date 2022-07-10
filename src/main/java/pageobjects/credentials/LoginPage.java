@@ -51,10 +51,7 @@ public class LoginPage extends BasePage {
         Assert.assertTrue(verifyIsDisplayed(cuadradoRojo));
     }
 
-    public By getUserNameImput(){
-        log.info("Get username input text ");
-       return usernameInput;
+    public Boolean isDisplayedUserNameInput(){
+       return verifyIsDisplayed(usernameInput);
     }
-
-
 }

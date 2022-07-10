@@ -17,5 +17,10 @@
             <package name="credentials"/>
         </packages>
     </test>
+    <test name="secured">
+        <packages>
+            <package name="secured"/>
+        </packages>
+    </test>
 
 </suite>

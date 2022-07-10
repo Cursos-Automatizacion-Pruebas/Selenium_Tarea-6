@@ -3,6 +3,7 @@ package utilities;
 import org.openqa.selenium.WebDriver;
 import pageobjects.credentials.LoginPage;
 import pageobjects.examples.ExamplePage;
+import pageobjects.securedArea.SecuredAreaPage;
 
 public class CommonFlows {
     private final Logs log = new Logs();
@@ -34,8 +35,11 @@ public class CommonFlows {
         loginPage.waitPageToLoad();
     }
 
-    /*public void loginValidUser() {
+    public void loginValidUser() {
         var loginPage = new LoginPage(driver);
-        loginPage.fillLogin("hola123","hehehe");
-    }*/
+        var securedArea = new SecuredAreaPage(driver);
+
+        loginPage.fillLogin("tomsmith","SuperSecretPassword!");
+        securedArea.waitPageToLoad();
+    }
 }

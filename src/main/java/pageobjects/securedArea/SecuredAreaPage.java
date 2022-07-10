@@ -7,8 +7,8 @@ import org.testng.Assert;
 import pageobjects.credentials.LoginPage;
 
 public class SecuredAreaPage extends BasePage {
-    private final By logoutbutton = By.cssSelector(".button secondary radius");
-    private LoginPage loginPage;
+    private final By logoutbutton = By.linkText("Logout");
+
     public SecuredAreaPage(WebDriver driver) {
         super(driver);
     }
@@ -26,9 +26,14 @@ public class SecuredAreaPage extends BasePage {
         waitPage(logoutbutton, this.getClass().getSimpleName());
     }
 
-    //ME QUEDE AQUI
-    public void verifyRedBoxIsDisplayed() {
+    public void clickOnLogoutButton() {
+        log.info("Clicking on logout Button");
+        click(logoutbutton);
+    }
+
+    public void verifyUserNameInputIsDisplayed() {
+        var loginPage = new LoginPage(driver);
         log.info("Verifying username input is displayed");
-        Assert.assertTrue(verifyIsDisplayed(loginPage.getUserNameImput()), "username input is not displayed");
+        Assert.assertTrue(loginPage.isDisplayedUserNameInput(),"username input is not displayed");
     }
 }

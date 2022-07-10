@@ -20,7 +20,7 @@ public class LoginTests extends BaseTest {
 
     @Test(groups = {regression})
     public void lockedCredentialsTest() {
-        loginPage.fillLogin("tomsmith","SuperSecretPassword!");
+        loginPage.fillLogin("hola123","hehehe!");
         loginPage.verifyRedBoxIsDisplayed();
     }
 
