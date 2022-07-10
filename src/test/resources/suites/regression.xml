@@ -12,27 +12,29 @@
         <listener class-name="utilities.listeners.SuiteListeners"/>
     </listeners>
 
-    <test name="checkout">
-        <packages>
-            <package name="checkout"/>
-        </packages>
-    </test>
-
     <test name="credentials">
         <packages>
             <package name="credentials"/>
         </packages>
     </test>
-
-    <test name="shopping">
+    <test name="secured">
         <packages>
-            <package name="shopping"/>
+            <package name="secured"/>
         </packages>
     </test>
-
-    <test name="bars">
+    <test name="checks">
         <packages>
-            <package name="bars"/>
+            <package name="checks"/>
+        </packages>
+    </test>
+    <test name="AddRemoveElements">
+        <packages>
+            <package name="AddRemoveElements"/>
+        </packages>
+    </test>
+    <test name="statuscode">
+        <packages>
+            <package name="statuscode"/>
         </packages>
     </test>
 </suite>

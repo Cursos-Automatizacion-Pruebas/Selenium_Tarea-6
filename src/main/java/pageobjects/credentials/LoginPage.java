@@ -46,8 +46,12 @@ public class LoginPage extends BasePage {
         click(loginButton);
     }
 
-    public void verifyLockedMessageIsDisplayed() {
+    public void verifyRedBoxIsDisplayed() {
         log.info("Verifying locked red box is displayed");
         Assert.assertTrue(verifyIsDisplayed(cuadradoRojo));
+    }
+
+    public Boolean isDisplayedUserNameInput(){
+       return verifyIsDisplayed(usernameInput);
     }
 }
